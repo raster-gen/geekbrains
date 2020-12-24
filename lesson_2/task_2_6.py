@@ -32,8 +32,9 @@ while True:
         # значения для строковых данных
         if i in (NAME, UNITS):
             new_goods[i] = new_value
-            if new_value not in analytics_dict[i]:
-                analytics_dict[i] += [new_value]
+            # дублирование значений в аналитике
+#            if new_value not in analytics_dict[i]:
+            analytics_dict[i] += [new_value]
         # значения для числовых данных
         if i in (PRICE, AMOUNT):
             new_goods[i] = int(new_value)
