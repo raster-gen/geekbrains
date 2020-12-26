@@ -16,5 +16,3 @@ def int_func(text):
 
 
 print(int_func(input('Введите любое слово или предложение:')))
-
-
