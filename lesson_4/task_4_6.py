@@ -11,26 +11,25 @@
 import itertools
 
 
-def generate_ten_num(start_num):
-    lst = []
-    for i in itertools.count(start_num):
-        if i < start_num + 10:
-            lst.append(i)
-        else:
-            break
-    return lst
+def generate_num(start_num, end_num):
+    for i in range(start_num, end_num + 1):
+        yield itertools.count(i)
 
 
-def repeat_list_elements(list_elements):
-    count = 0
+def repeat_list_elements(list_elements, num_repeat=10):
     iterator = itertools.cycle(list_elements)
-    while count < 10:
-        print(next(iterator))
-        count += 1
+    for i in range(num_repeat):
+        yield iterator
 
 
 if __name__ == '__main__':
-    print(generate_ten_num(7))
+    # пример использования первого скрипта
+    for el in generate_num(7, 16):
+        print(next(el))
 
+    print()
+
+    # пример использования второго скрипта
     lst = ['A', 'B', 'C']
-    repeat_list_elements(lst)
+    for el in repeat_list_elements(lst, 15):
+        print(next(el))
