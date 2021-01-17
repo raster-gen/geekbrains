@@ -35,7 +35,7 @@ class TownCar(Car):
     def show_speed(self):
         if self.speed > 60:
             return f'Превышение скорости {self.name} на {self.speed - 60}'
-        return self.speed
+        return super().show_speed()
 
 
 class SportCar(Car):
@@ -46,7 +46,7 @@ class WorkCar(Car):
     def show_speed(self):
         if self.speed > 40:
             return f'Превышение скорости {self.name} на {self.speed - 40}'
-        return self.speed
+        return super().show_speed()
 
 
 class PoliceCar(Car):
@@ -56,7 +56,7 @@ class PoliceCar(Car):
 if __name__ == '__main__':
     town = TownCar(70, 'white', 'Chrysler')
     sport = SportCar(200, 'yellow', 'Maseratti')
-    work = WorkCar(35, 'black', 'DAF')
+    work = WorkCar(50, 'black', 'DAF')
     police = PoliceCar(100, 'red', 'Dodge', True)
 
     print(town.show_speed())
