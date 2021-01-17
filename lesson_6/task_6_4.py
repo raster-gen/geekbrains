@@ -64,3 +64,7 @@ if __name__ == '__main__':
     work.stop()
     print(work.show_speed())
     police.turn('налево')
+<<<<<<< HEAD
+=======
+    
+>>>>>>> lesson_6
