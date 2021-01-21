@@ -12,8 +12,12 @@ class Matrix:
         return ''.join(self.our_str)
 
     def __add__(self, other):
-        self.sum_matrix = [(k+v for k, v in zip(x, y)) for x, y in zip(self.lst, other.lst)]
-        return Matrix(self.sum_matrix)
+        # с проверкой на размер
+        if len(self.lst) == len(other.lst):
+            self.sum_matrix = [(k+v for k, v in zip(x, y)) for x, y in zip(self.lst, other.lst)]
+            return Matrix(self.sum_matrix)
+        else:
+            print('Размер матриц разный')
 
 
 if __name__ == '__main__':

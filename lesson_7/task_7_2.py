@@ -2,9 +2,13 @@ from abc import ABC, abstractmethod
 
 
 class ClothesAbstract(ABC):
-    @abstractmethod
-    def __init__(self):
-        pass
+    def __init__(self, name, param):
+        self.name = name
+        self.param = param
+        if self.name.lower() == 'пальто':
+            self.tissue_consumption = self.param / 6.5 + 0.5
+        else:
+            self.tissue_consumption = 2 * self.param + 0.3
 
     @abstractmethod
     def __call__(self, *args, **kwargs):
@@ -15,16 +19,7 @@ class ClothesAbstract(ABC):
         pass
 
 
-class Clothes(ABC):
-    def __init__(self, name, param):
-        # super().__init__()
-        self.name = name
-        self.param = param
-        if self.name.lower() == 'пальто':
-            self.tissue_consumption = self.param / 6.5 + 0.5
-        else:
-            self.tissue_consumption = 2 * self.param + 0.3
-
+class Clothes(ClothesAbstract):
     def __call__(self, new_param):
         """Для новых значений"""
         self.param = new_param
