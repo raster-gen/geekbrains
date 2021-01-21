@@ -1,6 +1,3 @@
-from itertools import zip_longest
-
-
 class Matrix:
     def __init__(self, lst):
         self.lst = lst
@@ -19,10 +16,11 @@ class Matrix:
         return Matrix(self.sum_matrix)
 
 
-our_lst = [[2, 3, 5], [4, 5, 6], [6, 7, 7], [3, 5, 6], [3], [4, 2], [4]]
-our_lst2 = [[5, 1, 7], [2, 4, 9], [0, 9, 1], [2, 1, 1], [2, 4, 5], [4]]
-m = Matrix(our_lst)
-m2 = Matrix(our_lst2)
-print(m)
-print(m2)
-print(m + m2)
+if __name__ == '__main__':
+    our_lst = [[2, 3, 5], [4, 5, 6], [6, 7, 7]]
+    our_lst2 = [[5, 1, 7], [2, 4, 9], [0, 9, 1]]
+    m = Matrix(our_lst)
+    m2 = Matrix(our_lst2)
+    print(m)
+    print(m2)
+    print(m + m2)
