@@ -16,12 +16,12 @@ class Cell:
         return self.sub_cells * other.sub_cells
 
     def __floordiv__(self, other):
-        return self.sub_cells // other.sub_cells
+        return (self.sub_cells + other.sub_cells) // 2
 
     @property
     def make_order(self):
         number_n = self.sub_cells // self.cells_in_line
-        if number_n <= 0:
+        if number_n == 0:
             return '*' * self.sub_cells
         else:
             lst = ['*'] * self.sub_cells
