@@ -14,12 +14,8 @@ class ClothesAbstract(ABC):
     def __str__(self):
         pass
 
-    # @abstractmethod
-    # def __setattr__(self, key, value):
-    #     pass
 
-
-class Clothes:
+class Clothes(ABC):
     def __init__(self, name, param):
         # super().__init__()
         self.name = name
@@ -30,7 +26,7 @@ class Clothes:
             self.tissue_consumption = 2 * self.param + 0.3
 
     def __call__(self, new_param):
-        ''' Для новых значений'''
+        """Для новых значений"""
         self.param = new_param
         if self.name.lower() == 'пальто':
             self.tissue_consumption = self.param / 6.5 + 0.5
